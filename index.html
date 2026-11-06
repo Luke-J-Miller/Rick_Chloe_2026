@@ -282,7 +282,7 @@ body {
     <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Sealed task envelope. Activate to break the seal.">
       <div class="envelope-shadow"></div>
       <div class="envelope-inside"></div>
-      <div class="peek-card"><span>Prize Task</span></div>
+      <div class="peek-card"><span>The Task</span></div>
       <div class="pocket-sides"></div>
       <div class="pocket-bottom-wrap"><div class="pocket-bottom"></div></div>
       <div class="flap-wrap"><div class="flap"></div></div>
@@ -292,7 +292,7 @@ body {
     <div class="card" id="card" role="button" tabindex="-1" aria-label="Task card. Activate to flip it over.">
       <div class="card-inner">
         <section class="face face-front" aria-label="The task">
-          <p class="eyebrow">Prize Task</p>
+          <p class="eyebrow">The Task</p>
           <h1 class="task-title">Don't Sing "The"</h1>
           <hr class="rule">
           <p class="task-body">Sing an original song to the provided melody commemorating Rick and Chloe's Marriage.</p>
@@ -302,7 +302,7 @@ body {
         </section>
         <section class="face face-back" aria-label="How it works">
           <p class="eyebrow">Part II</p>
-          <h2 class="back-title">New to the game?</h2>
+          <h2 class="back-title"></h2>
           <hr class="rule">
           <ul class="rules">
             <li><span>Lip-sync to your recorded performance. </span></li>
@@ -402,7 +402,7 @@ function openEnvelope() {
     envelopeElement.setAttribute("tabindex", "-1");
     cardElement.setAttribute("tabindex", "0");
     cardElement.focus({ preventScroll: true });
-    hintElement.textContent = "Tap the card for the rules";
+    hintElement.textContent = "";
     hintElement.style.opacity = 1;
   }, finishDelay);
 }
@@ -411,7 +411,7 @@ function openEnvelope() {
 function flipCard() {
   if (!stageElement.classList.contains("is-gone")) return;
   const showingBack = cardElement.classList.toggle("is-flipped");
-  hintElement.textContent = showingBack ? "Tap to see the task again" : "Tap the card for the rules";
+  hintElement.textContent = showingBack ? "Tap to see the part I again" : "";
 }
 
 function activateOnKey(keyboardEvent, action) {
